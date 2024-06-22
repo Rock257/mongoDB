@@ -1,0 +1,15 @@
+view all database : show dbs
+
+create new database or switch database - use databasebName
+
+to check which database you are working  -  db
+
+Delete Database(the current working db will be delated check current database by 'db' command ) - 
+db.dropDataBase() 
+
+// collection 
+check collection  -  show collections
+
+// add new collection in database  - 
+
+db.createC ollection('collectionName')
