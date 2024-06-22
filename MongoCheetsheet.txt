@@ -10,6 +10,100 @@ db.dropDataBase()
 // collection 
 check collection  -  show collections
 
-// add new collection in database  - 
+// add new collection in database  -  db.createCollection('collectionName')
+ex.(create post collection)  => db.createCollection('post')
 
-db.createC ollection('collectionName')
+to delate collection - db.<collectionName>.drop()
+ex.(to delate post collection)  - db.post.drop()
+
+// mongoDb command for  Row ;
+
+//insert One Rows 
+
+db.<collectionName.insert({
+    "" : ""
+})>
+
+ex. 
+
+
+
+
+
+//insert many Rows  (take array)
+
+db.myDatabase.insertMany([{
+    "name" : "Rahul Soni",
+    "Profile " : "Software Developer",
+    'location ':'Banglore'
+},
+{
+    "name" : "shreya",
+    "Profile " : "Frontend Developer",
+    'location ':'Banglore'
+},
+{
+    "name" : "Priya",
+    "Profile " : "Python Developer", 
+    'location ':'Delhi'
+}
+,{
+    "name" : "Sanju Soni",
+    "Profile " : "Node Js Developer",
+    'location ':'Banglore'
+}
+    
+])
+
+
+
+// to view enter rows(will give all rows inside this collection)  => db.<collectionName>.find()  
+
+ex. db.myDatabase.find() 
+
+//show all rows in a collection (in prettyfied or cleaner way) =>db.<collectionName>.find().pretty();
+
+ db.myDatabase.find().pretty()
+
+
+ //no need to follow schema like sql 
+
+ db.myDatabase.insertOne({
+    "name" : "Shruti Joshi",
+    "Profile " : "Sr. Manager",
+    'location ':'Pune',
+"date" : new Date()
+})
+
+
+// search in mongoDb  
+
+db.myDatabase.find({ 'location' :'Banglore'})
+
+
+// limit the number  your output
+db.myDatabase.find().pretty().limit(2)
+
+
+
+// count your rows  => db.myDatabase.find().count()
+
+//sorting => 
+
+db.myDatabase.find().sort('name':+1)   //increasing order sort
+
+db.myDatabase.find().sort('name':-1)  // decreasing order sort
+
+
+//findOne() =>will give one specific row
+
+db.myDatabase.findOne("name" : "Shruti Joshi")
+
+
+//update a row 
+db.myDatabase.update({  "name" : "Priya"} ,
+{
+    "name" : "Priya",
+    "Profile " : "Python Developer", 
+    'location ':'Leh',
+})
